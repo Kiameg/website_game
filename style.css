@@ -1,0 +1,469 @@
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  background-color: chocolate;
+}
+a {
+  text-decoration: none;
+  color: bisque;
+  padding: 2rem;
+  margin-right: 9rem;
+  font-family: "Knewave", cursive;
+}
+
+header ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 2rem;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Knewave", cursive;
+  color: chocolate;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Knewave", cursive;
+  color: chocolate;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+h3 {
+  font-family: "Knewave", cursive;
+  color: chocolate;
+  margin-left: 3rem;
+}
+
+/**********screens**********/
+
+#game_backgrounds {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(assets/produktion/playskærm.svg);
+  background-size: cover;
+}
+
+#screen {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#start_game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/titelskærm.svg);
+  background-size: cover;
+  z-index: 100%;
+}
+
+#game_over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/endgame.svg);
+  background-size: cover;
+  z-index: 100%;
+}
+
+#level_complete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/win.svg);
+  background-size: cover;
+  z-index: 100%;
+}
+.hide {
+  display: none;
+}
+
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+#start_button {
+  background-image: url(assets/produktion/playknap.svg);
+  background-size: cover;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  top: 30rem;
+  left: 72rem;
+}
+
+#start_button:hover {
+  transform: translateY(10px);
+  transition: 1s;
+}
+
+#try_again1 {
+  width: 20%;
+  height: 30%;
+  position: absolute;
+  top: 25rem;
+  left: 50rem;
+  background-image: url(assets/produktion/tryagain.svg);
+  background-size: cover;
+}
+#try_again2 {
+  width: 20%;
+  height: 30%;
+  position: absolute;
+  top: 23rem;
+  left: 50rem;
+  background-image: url(assets/produktion/tryagain.svg);
+  background-size: cover;
+}
+
+#level_complete_points {
+  color: white;
+  font-family: "Knewave", cursive;
+  font-size: 2.5rem;
+  margin-top: 20rem;
+  margin-left: 10rem;
+}
+
+#game_over_points {
+  color: black;
+  font-family: "Knewave", cursive;
+  font-size: 2.5rem;
+  margin-top: 20rem;
+  margin-left: 13rem;
+}
+/***de forskellige nødder***/
+#noed_container {
+  width: 8%;
+  aspect-ratio: 1/1;
+  position: absolute;
+}
+
+#noed_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/nød1.svg);
+  background-size: cover;
+}
+
+#wallnut_container {
+  position: absolute;
+  width: 8%;
+  aspect-ratio: 1.5/1;
+}
+
+#wallnut_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/wallnut.svg);
+  background-size: cover;
+}
+
+#peanut_container {
+  position: absolute;
+  width: 140px;
+  height: 183px;
+}
+
+#peanut_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/peanut.svg);
+  background-size: cover;
+}
+
+#chipnuts_container {
+  position: absolute;
+  width: 8%;
+  aspect-ratio: 1.5/1;
+}
+
+#chipnuts_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/produktion/chipnuts.svg);
+  background-size: cover;
+}
+
+/****timer***/
+#time_board {
+  position: absolute;
+  width: 165px;
+  height: 200px;
+  aspect-ratio: 1/1.6;
+  top: 10%;
+  left: 80%;
+  background-image: url(assets/produktion/timer.svg);
+  background-size: cover;
+}
+#time_fill {
+  position: absolute;
+  background-image: url(assets/produktion/timer_1.svg);
+  background-size: cover;
+  top: 7.5%;
+  right: 2%;
+  width: 100%;
+  height: 100%;
+}
+
+.tid {
+  animation-name: tid_kf;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes tid_kf {
+  0% {
+    clip-path: inset(33% 0 0);
+  }
+  100% {
+    clip-path: inset(100% 0 0);
+  }
+}
+
+/***drop, drej og forsvind effekt***/
+.drop {
+  animation-name: drop_kf;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes drop_kf {
+  0% {
+    translate: 0 -230%;
+  }
+  100% {
+    translate: 0 600%;
+  }
+}
+
+.drej {
+  animation-name: drej_kf;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes drej_kf {
+  0% {
+  }
+  25% {
+    scale: 0.5;
+  }
+  50% {
+    scale: 1;
+  }
+  75% {
+    scale: 1;
+  }
+  100% {
+    rotate: 360deg;
+    scale: 0;
+  }
+}
+
+.forsvind {
+  animation-name: forsvind_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes forsvind_kf {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+/*****life, point boards*****/
+
+#life_board {
+  color: orangered;
+  margin-left: 104rem;
+  margin-top: 6px;
+  font-size: 0.1rem;
+  font-family: "Knewave", cursive;
+}
+#point_board {
+  color: orangered;
+  font-size: 4rem;
+  font-family: "Knewave", cursive;
+  margin-top: 47rem;
+  margin-left: 44rem;
+}
+
+/*******positioner på gameskærm******/
+.pos1 {
+  top: 10%;
+  left: 40%;
+}
+
+.pos2 {
+  top: 10%;
+  left: 60%;
+}
+
+.pos3 {
+  top: 10%;
+  left: 50%;
+}
+
+.pos4 {
+  top: 10%;
+  left: 30%;
+}
+
+/*****assets side*****/
+
+#titel {
+  width: 100rem;
+  margin-left: 3.3rem;
+  margin-bottom: 3rem;
+}
+
+#playgame {
+  width: 100rem;
+  margin-left: 3.3rem;
+  margin-bottom: 3rem;
+}
+
+#end {
+  width: 100rem;
+  margin-left: 3.3rem;
+  margin-bottom: 3rem;
+}
+
+#win {
+  width: 100rem;
+  margin-left: 3.3rem;
+  margin-bottom: 3rem;
+}
+
+#tryagain {
+  width: 30rem;
+  margin-left: 20rem;
+}
+
+#timer {
+  width: 30rem;
+  margin-left: 15rem;
+}
+
+#peanut {
+  width: 30rem;
+  margin-left: 15rem;
+}
+
+#wallnut {
+  width: 30rem;
+  margin-left: 15rem;
+}
+#noed {
+  width: 30rem;
+  margin-left: 15rem;
+}
+#chip {
+  width: 30rem;
+  margin-left: 15rem;
+}
+#play {
+  width: 30rem;
+  margin-left: 15rem;
+}
+
+/*****teknik side****/
+
+#diagram {
+  margin-top: 2rem;
+  margin-left: 20rem;
+}
+
+#teknik_backgrounds {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(assets/design/background_1.svg);
+  background-size: cover;
+}
+
+/****grafik*****/
+
+#screen2 {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+#design1,
+#design2,
+#design3,
+#design4,
+#design5 {
+  height: 400px;
+  width: 400px;
+  margin-left: 5px;
+}
+
+#design5 {
+  margin-left: 620px;
+}
+
+/****forside****/
+
+#savethenuts {
+  height: 600px;
+  width: 600px;
+  margin-left: 580px;
+}
